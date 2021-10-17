@@ -1,1 +1,12 @@
 <h1>ジャンル一覧画面</h1>
+  <h2>ジャンル登録</h2>
+
+    <%= form_with model: @genre, url: admin_genres_path, local:true do |f| %>
+    <h3>ジャンル名</h3>
+      <%= f.text_field :name %>
+      <%= f.submit '登録', class:"btn btn-success" %>
+    <% end %>
+
+    <% @genres.each do |genre| %>
+      <%= genre.name %>
+    <% end %>

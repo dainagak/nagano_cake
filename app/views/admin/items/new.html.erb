@@ -1,0 +1,10 @@
+<h1>商品新規登録画面</h1>
+
+    <%= form_with model: @genre, url: new_admin_item_path, local:true do |f| %>
+    <h2>商品新規登録</h2>
+      <%= f.text_field :name %>
+      <%= f.text_area :introduction %>
+      <%= f.number_field :price %>
+      <%= f.number_field :price %>
+      <%= f.submit '新規登録', class:"btn btn-success" %>
+    <% end %>
