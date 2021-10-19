@@ -3,10 +3,15 @@
 
 <% @items.each do |item| %>
   <tr>
+
     <td><%= item.id %></td>
+    <td>商品名</td>
     <td><%= link_to item.name, admin_item_path(item) %></td>
+    <td>税込価格</td>
     <td><%= item.price %></td>
-    <td><%= item.genre_id %></td>
+    <td>ジャンル</td>
+    <td><%= item.genre.name %></td>
+    <td>販売ステータス</td>
     <td><% if item.is_active == false %>
     販売中
     <% else %>

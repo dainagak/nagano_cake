@@ -21,7 +21,7 @@
       </li>
     <% elsif public_signed_in? %>
       <li>
-        <%= link_to 'マイページ', public_customer_path %>
+        <%= link_to 'マイページ', public_customer_path(current_public.id) %>
       </li>
       <li>
         <%= link_to '商品一覧', public_items_path %>
@@ -35,10 +35,10 @@
 
     <% else %>
       <li>
-        <%= link_to "会員登録", new_admin_registration_path %>
+        <%= link_to "会員登録", new_public_registration_path %>
       </li>
       <li>
-        <%= link_to "ログイン", new_admin_session_path %>
+        <%= link_to "ログイン", new_public_session_path %>
       </li>
     <% end %>
   </header>
