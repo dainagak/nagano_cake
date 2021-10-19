@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :publics
 
+  devise_for :admins
+
   namespace :public do
     root to: 'homes#top'
     get "/home/about" => "homes#about"
     resources :cart_items
-    resources :customers
+    resources :customers, only: [:show, :edit, :update]
     resources :items
     resources :orders
     resources :registration
@@ -18,7 +20,6 @@ Rails.application.routes.draw do
     resources :items, only: [:show, :index, :new, :create, :edit, :update]
   end
 
-  devise_for :admins
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
