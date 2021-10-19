@@ -2,6 +2,8 @@
 
     <%= form_with model: @item, url: admin_items_path, method: :post, local:true do |f| %>
     <h2>商品新規登録</h2>
+      <li>ジャンル<%= f.collection_select :genre_id, Genre.all ,:id, :name, include_blank: "--選択してください--" %></li>
+      <li>販売ステータス<%= f.select :is_active, [["販売中","false"], ["販売不可","true"]], include_blank: "--選択してください--" %></li>
       <li>商品名<%= f.text_field :name %></li>
       <li>商品説明文<%= f.text_area :introduction %></li>
       <li>税抜価格<%= f.number_field :price %></li>
