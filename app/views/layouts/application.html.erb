@@ -21,7 +21,7 @@
       </li>
     <% elsif public_signed_in? %>
       <li>
-        <%= link_to 'マイページ', public_public_path(current_public.id) %>
+        <%= link_to 'マイページ', edit_public_public_path(current_public.id), method: :get %>
       </li>
       <li>
         <%= link_to '商品一覧', public_items_path %>

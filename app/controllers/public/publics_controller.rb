@@ -13,7 +13,7 @@ class Public::PublicsController < ApplicationController
       @public = current_public
       if @public.update(public_params)
          flash[:success] = "Fixed"
-         redirect_to public_public_path
+         redirect_to action: :show
       else
           render 'edit'
       end
