@@ -21,10 +21,10 @@
       </li>
     <% elsif public_signed_in? %>
       <li>
-        <%= link_to 'マイページ', edit_public_public_path(current_public.id), method: :get %>
+        <%= link_to 'マイページ', public_show_path(current_public.id) %>
       </li>
       <li>
-        <%= link_to '商品一覧', public_items_path %>
+        <%= link_to '商品一覧', items_path %>
       </li>
       <li>
         <%= link_to 'カート画面', public_cart_items_path %>
