@@ -7,7 +7,7 @@ Rails.application.routes.draw do
    registration: 'publics/registrations'
   }
 
-  scope module: 'publics' do
+  scope module: 'public' do
     root to: 'homes#top'
     get "/home/about" => "homes#about"
     resources :items, only: [:show, :index]

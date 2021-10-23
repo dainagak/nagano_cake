@@ -39,7 +39,7 @@ class DeviseCreatePublics < ActiveRecord::Migration[5.0]
       t.string :postal_code
       t.string :address
       t.string :phone_number
-      t.boolean :is_customer_status, default: false, null: false
+      t.boolean :is_active
 
       t.timestamps null: false
     end
