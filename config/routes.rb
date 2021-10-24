@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
   #会員側のルート
-  devise_for :publics, controllers: {
-   sessions:      'publics/sessions',
-   passwords:     'publics/passwords',
-   registration: 'publics/registrations'
+  devise_for :customers, controllers: {
+  sessions:      'public/sessions',
+  passwords:     'public/passwords',
+  registrations: 'public/registrations'
   }
 
   scope module: 'public' do
     root to: 'homes#top'
     get "/home/about" => "homes#about"
     resources :items, only: [:show, :index]
-   end
+  end
 
   namespace :public do
     get 'show' => 'publics#show'
@@ -25,9 +25,9 @@ Rails.application.routes.draw do
 
   #管理者側のルート
   devise_for :admins, controllers: {
-   sessions:      'admins/sessions',
-   passwords:     'admins/passwords',
-   registrations: 'admins/registrations'
+   sessions:      'admin/sessions',
+   passwords:     'admin/passwords',
+   registrations: 'admin/registrations'
   }
 
   namespace :admin do
