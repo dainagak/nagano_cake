@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'addresses/index'
+  get 'addresses/create'
+  get 'addresses/destroy'
+  get 'addresses/edit'
+  get 'addresses/update'
   #会員側のルート
   devise_for :customers, controllers: {
   sessions:      'public/sessions',
@@ -21,6 +26,7 @@ Rails.application.routes.draw do
     patch 'public/withdraw' => 'publics#withdraw', as: 'publics_withdraw'
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :orders, only: [:create, :new, :index, :show]
+    resources :addresses, only: [:index, :create, :destroy, :edit, :update]
   end
 
   #管理者側のルート
