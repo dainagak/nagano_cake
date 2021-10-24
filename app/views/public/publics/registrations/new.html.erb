@@ -1,13 +1,14 @@
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render "public/shared/error_messages", resource: resource %>
 
   <div class="row">
     <label class="col-lg-3">名前</label>
     <div class="col-lg-3">
       <%= f.text_field :last_name, autoforcus: true, autocomplete: "last_name",  placeholder: "(姓)" %>
     </div>
+
     <div class="col-lg-3">
       <%= f.text_field :first_name, autoforcus: true, autocomplete: "first_name",  placeholder: "(名)" %>
     </div>
@@ -44,7 +45,6 @@
     </div>
   </div><br>
 
-
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -68,4 +68,5 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+<%= render "public/shared/links" %>

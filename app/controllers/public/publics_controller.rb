@@ -1,16 +1,16 @@
 class Public::PublicsController < ApplicationController
-  before_action :authenticate_public!
+  before_action :authenticate_customer!
 
   def show
-      @public = current_public
+      @public = current_customer
   end
 
   def edit
-      @public = current_public
+      @public = current_customer
   end
 
   def update
-      @public = current_public
+      @public = current_customer
       if @public.update(public_params)
          flash[:success] = "Fixed"
          redirect_to action: :show
@@ -23,7 +23,7 @@ class Public::PublicsController < ApplicationController
   end
 
   def withdraw
-      @public = current_public
+      @public = current_customer
       @public.update(is_active: true)
       reset_session
 

@@ -19,9 +19,9 @@
       <li>
         <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
       </li>
-    <% elsif public_signed_in? %>
+    <% elsif customer_signed_in? %>
       <li>
-        <%= link_to 'マイページ', public_show_path(current_public.id) %>
+        <%= link_to 'マイページ', public_show_path(current_customer.id) %>
       </li>
       <li>
         <%= link_to '商品一覧', items_path %>
@@ -30,15 +30,15 @@
         <%= link_to 'カート画面', public_cart_items_path %>
       </li>
       <li>
-        <%= link_to "ログアウト", destroy_public_session_path, method: :delete %>
+        <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
       </li>
 
     <% else %>
       <li>
-        <%= link_to "会員登録", new_public_registration_path %>
+        <%= link_to "会員登録", new_customer_registration_path %>
       </li>
       <li>
-        <%= link_to "ログイン", new_public_session_path %>
+        <%= link_to "ログイン", new_customer_session_path %>
       </li>
     <% end %>
   </header>
