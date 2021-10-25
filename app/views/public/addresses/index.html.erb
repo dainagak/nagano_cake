@@ -42,7 +42,7 @@
                 <td class="col-xs-6"><%= addresses.address %></td>
                 <td class="col-xs-2"><%= addresses.name %></td>
                 <td class="col-xs-2">
-                    <%= link_to "編集する", edit_public_address_path(current_customer), class: "glyphicon glyphicon-pencil btn-sm btn-primary" %>
+                    <%= link_to "編集する", edit_public_address_path(addresses.id), class: "glyphicon glyphicon-pencil btn-sm btn-primary" %>
                     <%= link_to "削除する", public_address_path(current_customer), method: :DELETE, data: {confirm: "本当に削除してもよろしいですか？"}, class: "glyphicon glyphicon-trash btn-sm btn-danger" %>
                 </td>
               </tr>

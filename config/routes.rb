@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'addresses/index'
-  get 'addresses/create'
-  get 'addresses/destroy'
-  get 'addresses/edit'
-  get 'addresses/update'
   #会員側のルート
   devise_for :customers, controllers: {
   sessions:      'public/sessions',
