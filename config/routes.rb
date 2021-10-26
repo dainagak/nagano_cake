@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    resources :genres, only: [:show]
     get 'show' => 'publics#show'
     get 'publics/edit' => 'publics#edit'
     patch 'update' => 'publics#update'
