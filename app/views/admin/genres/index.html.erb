@@ -9,4 +9,5 @@
 
     <% @genres.each do |genre| %>
       <%= genre.name %>
+  <td><%= link_to "編集する", edit_admin_genre_path(genre), class: "btn btn-primary" %></td>
     <% end %>
