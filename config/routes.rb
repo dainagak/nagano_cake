@@ -21,6 +21,9 @@ Rails.application.routes.draw do
     get 'public' => 'publics#unsubscribe'
     patch 'public/withdraw' => 'publics#withdraw', as: 'publics_withdraw'
     resources :cart_items, only: [:index, :create, :update, :destroy]
+    delete 'cart_items' => 'cart_items#all_destroy', as: 'all_destroy'
+    get 'orders/about' => 'orders#about', as: 'orders_about'
+    get 'orders/thanks' => 'orders#thanks'
     resources :orders, only: [:create, :new, :index, :show]
     resources :addresses, only: [:index, :create, :destroy, :edit, :update]
   end
