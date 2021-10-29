@@ -5,7 +5,7 @@ class Public::OrdersController < ApplicationController
 	def about
 		@order = Order.new
 		@customer = current_customer
-		@addresses = ShippingAddress.where(customer_id: current_customer.id)
+		@addresses = Address.where(customer_id: current_customer.id)
 	end
 
 	def create
@@ -42,7 +42,7 @@ class Public::OrdersController < ApplicationController
 		# 登録済住所が選択された時
 		elsif destination == 1
 
-			address = ShippingAddress.find(params[:shipping_address_for_order])
+			address = Address.find(params[:shipping_address_for_order])
 			session[:order][:post_code] = address.postal_code
 			session[:order][:address] = address.address
 			session[:order][:name] = address.name

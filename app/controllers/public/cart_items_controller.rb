@@ -2,9 +2,8 @@ class Public::CartItemsController < ApplicationController
     before_action :authenticate_customer!
 
     def index
-        @cart_items = current_customer.cart_items
-        @total_price = @cart_items.sum{|cart_item|@cart_item.item.price * @cart_item.amount * 1.1}
-
+        @cart_items = current_customer.cart_items.all
+        @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
     end
 
     def create
@@ -45,9 +44,8 @@ class Public::CartItemsController < ApplicationController
     end
 
     private
-
-      def cart_item_params
-        params.require(:cart_item).permit(:amount, :item_id, :customer_id)
-      end
+    def cart_item_params
+    params.require(:cart_item).permit(:amount, :item_id, :customer_id)
+    end
 
 end

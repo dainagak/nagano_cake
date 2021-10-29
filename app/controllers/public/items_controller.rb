@@ -1,4 +1,5 @@
 class Public::ItemsController < ApplicationController
+ before_action :authenticate_customer!
 
  def index
   # @genres = Genre.all
@@ -13,5 +14,7 @@ class Public::ItemsController < ApplicationController
   @cart_item = CartItem.new
   @genres = Genre.all
  end
+
+
 
 end
