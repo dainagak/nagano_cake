@@ -28,8 +28,7 @@
 			<span>　　　</span><%= form.radio_button :a_method, 1 %>
 			<%= form.label :登録済住所から選択 %><br>
 			<!-- collection_select(プロパティ名, オブジェクトの配列, value属性の項目, テキストの項目 [, オプション])-->
-			<span>　　　　　</span><%= form.collection_select :shipping_address_for_order, @addresses, :id, :shipping_address_for_view %><br>
-
+			<span>　　　　　</span><%= form.collection_select :address_for_order, @addresses, :id, :address_was %><br>
 
 
 			<span>　　　</span><%= form.radio_button :a_method, 2 %>
