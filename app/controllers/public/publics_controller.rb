@@ -24,7 +24,7 @@ class Public::PublicsController < ApplicationController
 
   def withdraw
       @public = current_customer
-      @public.update(is_active: false)
+      @public.update(is_active: true)
       reset_session
 
       flash[:notice] = "BYE"
