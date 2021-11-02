@@ -1,35 +1,11 @@
-<div class="pull-right" style="margin-bottome: 10px;">
-	<%#= search_form_for(@search, url:items_path) do |f| %>
-		<%#= f.label :name, "商品キーワード" %>
-		<%#= f.search_field :name_cont %>
-		<%#= f.submit %>
-	<%# end %>
-</div>
-
 <div class="row">
 	<div class="col-xs-2">
-
-
-    <div class="genrekara" style="font-size :20px;" >
-      <!--ジャンルから探す-->
-    </div>
-
     <table class="table table-bordered table-hover text-center ec-genre-list" >
       <tr>
         <td>
           <%= link_to "全商品を表示", items_path, class:"ec-genre-list-item" %>
         </td>
       </tr>
-
-      <!--<%# @genres.each do |genre| %>-->
-      <!--<%# if genre.is_active == true %>-->
-      <!--  <tr>-->
-      <!--    <td>-->
-      <!--      <%#= link_to genre.name, url: public_genre_path(genre.id), class:"ec-genre-list-item"%>-->
-      <!--    </td>-->
-      <!--  </tr>-->
-      <!--<%# end %>-->
-      <!--<%# end %>-->
     </table>
 	</div>
 
