@@ -4,7 +4,7 @@
         <table class="table table-bordered table-condensed">
             <p>
                 <strong class="information-link">登録情報</strong>
-                <%= link_to " 編集する", public_publics_edit_path, class: "glyphicon glyphicon-pencil btn btn-success" %>
+                <%= link_to " 編集する", edit_customers_path, class: "glyphicon glyphicon-pencil btn btn-success" %>
             </p>
             <tr>
                 <td class="col-xs-2">氏名</td>
@@ -39,11 +39,11 @@
 
         <p>
             <strong class="shipping-link">配送先　</strong>
-            <%= link_to " 一覧を見る", public_addresses_path, class: "glyphicon glyphicon-folder-open btn btn-info" %>
+            <%= link_to " 一覧を見る", addresses_path, class: "glyphicon glyphicon-folder-open btn btn-info" %>
         </p>
         <p>
             <strong class="shipping-link">注文履歴</strong>
-            <%= link_to " 一覧を見る", public_orders_path, class: "glyphicon glyphicon-folder-open btn btn-info" %>
+            <%= link_to " 一覧を見る", orders_path, class: "glyphicon glyphicon-folder-open btn btn-info" %>
         </p>
   <div>
 </div>
