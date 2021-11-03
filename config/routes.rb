@@ -1,25 +1,15 @@
 Rails.application.routes.draw do
-
-  #会員側のルート
-  devise_for :customers, controllers: {
-  sessions:      'public/sessions',
-  passwords:     'public/passwords',
-  registrations: 'public/registrations'
-  }
-
   scope module: 'public' do
     root to: 'homes#top'
     get "/home/about" => "homes#about"
     resources :items, only: [:show, :index]
   end
 
-  namespace :public do
+  scope module: :public do
     resources :genres, only: [:show]
-    get 'show' => 'publics#show'
-    get 'publics/edit' => 'publics#edit'
-    patch 'update' => 'publics#update'
-    get 'public' => 'publics#unsubscribe'
-    patch 'public/withdraw' => 'publics#withdraw', as: 'publics_withdraw'
+    resource :customers, only: [:update, :edit, :show]
+    get 'unsubscribe' => 'customers#unsubscribe'
+    patch 'withdraw' => 'customers#withdraw', as: 'customers_withdraw'
     resources :cart_items, only: [:index, :create, :update, :destroy]
     delete 'cart_items' => 'cart_items#all_destroy', as: 'all_destroy'
     get 'orders/about' => 'orders#about', as: 'orders_about'
@@ -27,6 +17,13 @@ Rails.application.routes.draw do
     resources :orders, only: [:create, :new, :index, :show]
     resources :addresses, only: [:index, :create, :destroy, :edit, :update]
   end
+
+  #会員側のルート
+  devise_for :customers, controllers: {
+    sessions:      'public/sessions',
+    passwords:     'public/passwords',
+    registrations: 'public/registrations'
+  }
 
   #管理者側のルート
   devise_for :admins, controllers: {

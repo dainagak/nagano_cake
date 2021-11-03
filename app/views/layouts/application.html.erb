@@ -20,17 +20,20 @@
         <%= link_to '会員一覧', admin_customers_path %>
       </li>
       <li>
+        <%= link_to '注文履歴一覧', admin_orders_path %>
+      </li>
+      <li>
         <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
       </li>
     <% elsif customer_signed_in? %>
       <li>
-        <%= link_to 'マイページ', public_show_path(current_customer.id) %>
+        <%= link_to 'マイページ', customers_path %>
       </li>
       <li>
         <%= link_to '商品一覧', items_path %>
       </li>
       <li>
-        <%= link_to 'カート画面', public_cart_items_path %>
+        <%= link_to 'カート画面', cart_items_path %>
       </li>
       <li>
         <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
